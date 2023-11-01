@@ -1,4 +1,4 @@
-let articles = [
+const articles = [
   {
       "source": {
           "id": "cnn",

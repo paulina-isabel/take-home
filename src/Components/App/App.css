@@ -1,3 +1,27 @@
 .App {
   text-align: center;
 }
+
+.navbar {
+  width: 100%;
+  height: 30vh;
+  background-image: url('../../images/newspaper-printing.png');
+  background-size: 100% auto;
+}
+
+.article-container {
+  background-color: blanchedalmond;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  /* flex-direction: row; */
+}
+
+.article-img {
+  width: 25vw;
+}
+
+.title-author {
+  width: 75vw;
+  padding: 50px;
+}
