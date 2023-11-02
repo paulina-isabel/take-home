@@ -5,7 +5,7 @@ const AllArticles = ({ articles }) => {
     <div className="all-articles">
       <IndividualArticle articles={articles}/>
     </div>
-  )
+  );
 };
 
 export default AllArticles;

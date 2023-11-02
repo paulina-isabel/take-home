@@ -1,12 +1,6 @@
+import { formatPublishedDate } from "../../utils";
+
 const IndividualArticle = ({ articles }) => {
-
-  const formatPublishedDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-    const date = new Date(dateString);
-    return date.toLocaleString('en-US', options);
-  }
-
-  
   const allArticles = articles.map((article) => {
     const reformattedDate = formatPublishedDate(article.publishedAt)
     return (
@@ -23,7 +17,7 @@ const IndividualArticle = ({ articles }) => {
         </div>
         <img src={article.urlToImage} alt={article.title} className="article-img"></img>
       </div>
-    )
+    );
   });
   
   return (

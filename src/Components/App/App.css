@@ -27,3 +27,7 @@
 h1 {
  margin: 0;
 }
+
+label {
+  font-size:18px;
+}
