@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { formatPublishedDate } from "../../utils";
+import { Link } from 'react-router-dom';
 
 const AllArticles = ({ articles, handleSearch }) => {  
   const [searchValue, setSearchValue] = useState('');
@@ -7,19 +8,21 @@ const AllArticles = ({ articles, handleSearch }) => {
   const allArticles = articles.map((article) => {
     const reformattedDate = formatPublishedDate(article.publishedAt)
     return (
-      <div className="article-container" key={article.title}>
-        <div className="title-author">
-          <h2>
-            {article.title}
-          </h2>
-          {reformattedDate}
-          <p>
-            Source: {article.source.name}
-          </p>
-          Author: {article.author}
+      <Link to={`/article/${article.title}`} key={article.title}>
+        <div className="article-container" >
+          <div className="title-author">
+            <h2>
+              {article.title}
+            </h2>
+            {reformattedDate}
+            <p>
+              Source: {article.source.name}
+            </p>
+            Author: {article.author}
+          </div>
+          <img src={article.urlToImage} alt={article.title} className="article-img"></img>
         </div>
-        <img src={article.urlToImage} alt={article.title} className="article-img"></img>
-      </div>
+      </Link>
     );
   });
 

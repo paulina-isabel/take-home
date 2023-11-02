@@ -1,14 +1,15 @@
 import NavBar from '../NavBar/NavBar';
 import './App.css';
 // import getArticles from '../../apiCalls'
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import dummyArticles from '../../dummyArticles';
 import AllArticles from '../AllArticles/AllArticles';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import IndividualArticle from '../IndividualArticle/IndividualArticle';
 
 const App = () => {
-  const [articles, setArticles] = useState(dummyArticles)
+  const [articles, setArticles] = useState([])
 
   // search function needs to be created in app
   // add a .filter() in this function
@@ -16,12 +17,24 @@ const App = () => {
   // search input needs to be made in navbar
   // set articles in navbar using setter from app
 
-  console.log(articles)
   // let url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=f101fd01d12c42e2877136a41b1b404c'
-
+  
   // useEffect(() => {
-  //   getArticles(url)
-  // }, [url])
+    //   getArticles(url)
+    // }, [url])
+    
+    useEffect(() => {
+      addIds(dummyArticles)
+      setArticles(dummyArticles)
+    }, [])
+    
+    console.log(articles)
+  const addIds = (array) => {
+    return array.map((element, index) => ({
+      ...element,
+      id: index + 1
+    }));
+  }
 
   const handleSearch = (searchWord, existingArticles) => {
     const filteredArticles = existingArticles.filter((article) => {
@@ -34,9 +47,8 @@ const App = () => {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path='/' element={
-          <AllArticles articles={articles} handleSearch={handleSearch}/>
-        }/>
+        <Route path='/' element={<AllArticles articles={articles} handleSearch={handleSearch}/>} />
+        <Route path='/article/:title' element={<IndividualArticle articles={articles}/>}/>
       </Routes>
     </div>
   );
