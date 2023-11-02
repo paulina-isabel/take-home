@@ -1,4 +1,4 @@
-const articles = [
+const dummyArticles = [
   {
       "source": {
           "id": "cnn",
@@ -261,4 +261,4 @@ const articles = [
   }
 ]
 
-export default articles
+export default dummyArticles;

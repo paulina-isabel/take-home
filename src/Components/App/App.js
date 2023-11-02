@@ -2,17 +2,18 @@ import NavBar from '../NavBar/NavBar';
 import './App.css';
 // import getArticles from '../../apiCalls'
 // import { useEffect } from 'react';
-import articles from '../../dummyArticles'
+import dummyArticles from '../../dummyArticles'
 import AllArticles from '../AllArticles/AllArticles'
 import { useState } from 'react'
 
 const App = () => {
-
-  const [items, setItems] = useState([])
+  const [articles, setArticles] = useState(dummyArticles)
 
   // search function needs to be created in app
-  // search needs to be made in navbar
-  // set articles in 
+  // add a .filter() in this function
+  // pass search function down to navbar in prop
+  // search input needs to be made in navbar
+  // set articles in navbar using setter from app
 
   console.log(articles)
   // let url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=f101fd01d12c42e2877136a41b1b404c'
