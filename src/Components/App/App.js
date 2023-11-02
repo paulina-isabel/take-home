@@ -1,6 +1,6 @@
 import NavBar from '../NavBar/NavBar';
 import './App.css';
-// import getArticles from '../../apiCalls'
+import getArticles from '../../apiCalls'
 import { useEffect } from 'react';
 import dummyArticles from '../../dummyArticles';
 import AllArticles from '../AllArticles/AllArticles';
@@ -17,24 +17,21 @@ const App = () => {
   // search input needs to be made in navbar
   // set articles in navbar using setter from app
 
-  // let url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=f101fd01d12c42e2877136a41b1b404c'
-  
-  // useEffect(() => {
-    //   getArticles(url)
-    // }, [url])
+  let url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=f101fd01d12c42e2877136a41b1b404c'
     
-    useEffect(() => {
-      addIds(dummyArticles)
-      setArticles(dummyArticles)
-    }, [])
-    
-    console.log(articles)
-  const addIds = (array) => {
-    return array.map((element, index) => ({
-      ...element,
-      id: index + 1
-    }));
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getArticles(url);
+        const { articles } = response; // Assuming the data contains an 'articles' property
+        setArticles(articles); // Update the 'articles' state
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, [url])
 
   const handleSearch = (searchWord, existingArticles) => {
     const filteredArticles = existingArticles.filter((article) => {
