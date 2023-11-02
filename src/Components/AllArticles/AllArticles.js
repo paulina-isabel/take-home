@@ -1,4 +1,3 @@
-import IndividualArticle from "../IndividualArticle/IndividualArticle";
 import { useState } from 'react';
 import { formatPublishedDate } from "../../utils";
 
@@ -33,7 +32,6 @@ const AllArticles = ({ articles, handleSearch }) => {
         onChange={e => setSearchValue(e.target.value)}
       />
       <button onClick={() => handleSearch(searchValue, articles)}>Search</button>
-      {/* <IndividualArticle articles={articles}/> */}
       {allArticles}
     </div>
   );
