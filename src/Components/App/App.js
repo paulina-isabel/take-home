@@ -2,9 +2,9 @@ import NavBar from '../NavBar/NavBar';
 import './App.css';
 // import getArticles from '../../apiCalls'
 // import { useEffect } from 'react';
-import dummyArticles from '../../dummyArticles'
-import AllArticles from '../AllArticles/AllArticles'
-import { useState } from 'react'
+import dummyArticles from '../../dummyArticles';
+import AllArticles from '../AllArticles/AllArticles';
+import { useState } from 'react';
 
 const App = () => {
   const [articles, setArticles] = useState(dummyArticles)
@@ -22,12 +22,19 @@ const App = () => {
   //   getArticles(url)
   // }, [url])
 
+  const handleSearch = (searchWord, existingArticles) => {
+    const filteredArticles = existingArticles.filter((article) => {
+      return article.title.includes(searchWord)
+    });
+    setArticles(filteredArticles)
+  };
+
   return (
     <div className="App">
       <NavBar />
-      <AllArticles articles={articles}/>
+      <AllArticles articles={articles} handleSearch={handleSearch}/>
     </div>
   );
-}
+};
 
 export default App;
