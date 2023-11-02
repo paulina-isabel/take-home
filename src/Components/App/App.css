@@ -1,0 +1,29 @@
+.navbar {
+  width: 100%;
+  height: 60vh;
+  background-image: url('../../images/newspaper-printing.png');
+  background-size: 100% auto;
+  color: white;
+  font-size: 80px;
+  text-align: left;
+}
+
+.article-container {
+  padding: 60px;
+  margin: 40px;
+  display: flex;
+}
+
+.article-img {
+  width: 35vw;
+}
+
+.title-author {
+  width: 35vw;
+  padding: 30px;
+  text-align: right;
+}
+
+h1 {
+ margin: 0;
+}
