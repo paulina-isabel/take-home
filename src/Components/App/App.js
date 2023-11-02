@@ -1,7 +1,7 @@
 import NavBar from '../NavBar/NavBar';
 import './App.css';
-import getArticles from '../../apiCalls'
-import { useEffect } from 'react';
+// import getArticles from '../../apiCalls'
+// import { useEffect } from 'react';
 import articles from '../../dummyArticles'
 import AllArticles from '../AllArticles/AllArticles'
 
@@ -17,7 +17,6 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      Hewwo
       <AllArticles articles={articles}/>
     </div>
   );
