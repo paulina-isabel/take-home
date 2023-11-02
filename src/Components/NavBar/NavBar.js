@@ -5,7 +5,7 @@ const NavBar = () => {
       News Source
       </h1>
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
