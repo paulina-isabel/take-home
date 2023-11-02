@@ -5,6 +5,7 @@ import './App.css';
 import dummyArticles from '../../dummyArticles';
 import AllArticles from '../AllArticles/AllArticles';
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
   const [articles, setArticles] = useState(dummyArticles)
@@ -32,7 +33,11 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      <AllArticles articles={articles} handleSearch={handleSearch}/>
+      <Routes>
+        <Route path='/' element={
+          <AllArticles articles={articles} handleSearch={handleSearch}/>
+        }/>
+      </Routes>
     </div>
   );
 };
