@@ -4,7 +4,7 @@ const IndividualArticle = ({ articles }) => {
   const allArticles = articles.map((article) => {
     const reformattedDate = formatPublishedDate(article.publishedAt)
     return (
-      <div className="article-container">
+      <div className="article-container" key={article.title}>
         <div className="title-author">
           <h2>
             {article.title}
