@@ -27,7 +27,7 @@ const AllArticles = ({ articles, handleSearch }) => {
     <div className="all-articles">
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Search by title..."
         value={searchValue}
         onChange={e => setSearchValue(e.target.value)}
       />
