@@ -32,7 +32,7 @@ describe('landing page', () => {
     })
   })
 
-  it.only('should show a details page when an article is clicked', () => {
+  it('should show a details page when an article is clicked', () => {
     cy.get('.article-container').first().click();
     cy.location('pathname').should('eq', '/article/Sam%20Bankman-Fried%20testifies%20he%20called%20\'some%20of%20the\'%20shots%20at%20FTX%20-%20CNN');
     cy.get('.navbar').should('exist');
