@@ -38,7 +38,9 @@ const AllArticles = ({ articles, handleSearch }) => {
           />
         <button onClick={() => handleSearch(searchValue, articles)}>Search</button>
       </form>
-      {allArticles}
+      <div className='articles-style'>
+        {allArticles}
+      </div>
     </div>
   );
 };

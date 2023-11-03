@@ -16,11 +16,13 @@ const App = () => {
   // pass search function down to navbar in prop
   // search input needs to be made in navbar
   // set articles in navbar using setter from app
+
+  const url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=f101fd01d12c42e2877136a41b1b404c'
     
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await getArticles('https://newsapi.org/v2/top-headlines?country=us&apiKey=f101fd01d12c42e2877136a41b1b404c');
+        const response = await getArticles(url);
         const { articles } = response;
         setArticles(articles);
       } catch (error) {
@@ -28,7 +30,7 @@ const App = () => {
       }
     };
     fetchData();
-  }, [])
+  }, [url])
 
   const handleSearch = (searchWord, existingArticles) => {
     const filteredArticles = existingArticles.filter((article) => {
