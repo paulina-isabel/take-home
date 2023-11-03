@@ -7,7 +7,7 @@ describe('landing page', () => {
     cy.visit('http://localhost:3000/')
   })
 
-  it('should show all movies when on the homepage', () => {
+  it('should show all articles and form when on the homepage', () => {
     cy.location('pathname').should('eq', '/');
     cy.get('.navbar').should('exist');
     cy.get('form').should('exist');
@@ -32,36 +32,14 @@ describe('landing page', () => {
     })
   })
 
-  // it('should display a helpful message to the user when an error occurs', () => {
-  //   cy.intercept(
-  //     "GET",
-  //     "https://rancid-tomatillos.herokuapp.com/api/v2/movies",
-  //     {
-  //       statusCode: 500
-  //     }
-  //   ).visit("http://localhost:3000");
-  //   cy.get(".error-message").should('exist');
-  // })
-
-  // it('should display a helpful message to the user when an error occurs', () => {
-  //   cy.intercept(
-  //     "GET",
-  //     "https://rancid-tomatillos.herokuapp.com/api/v2/movies",
-  //     {
-  //       statusCode: 400
-  //     }
-  //   ).visit("http://localhost:3000");
-  //   cy.get(".error-message").should('exist');
-  // })
-
-  // it('should display a helpful message to the user when an error occurs', () => {
-  //   cy.intercept(
-  //     "GET",
-  //     "https://rancid-tomatillos.herokuapp.com/api/v2/movies",
-  //     {
-  //       statusCode: 300
-  //     }
-  //   ).visit("http://localhost:3000");
-  //   cy.get(".error-message").should('exist');
-  // })
+  it.only('should show a details page when an article is clicked', () => {
+    cy.get('.article-container').first().click();
+    cy.location('pathname').should('eq', '/article/Sam%20Bankman-Fried%20testifies%20he%20called%20\'some%20of%20the\'%20shots%20at%20FTX%20-%20CNN');
+    cy.get('.navbar').should('exist');
+    cy.contains('h2', 'Sam Bankman-Fried testifies he called \'some of the\' shots at FTX - CNN');
+    cy.get('.selected-article > :nth-child(2)').contains('October 30, 2023 at 04:24:49 PM')
+    cy.get('.selected-article-description').contains('Assistant US Attorney Danielle Sassoon\'s pointed cross-examination continued after a break for lunch, in the form of short rapid-fire questions about what Bankman-Fried knew as the head of FTX versu')
+    cy.get('.selected-article > :nth-child(5)').contains('Source: CNN')
+    cy.contains('Author: From CNN\'s Allison Morrow');
+  })
 })
