@@ -1,0 +1,43 @@
+{
+    "articles": [
+        {
+            "source": {
+                "id": "cnn",
+                "name": "CNN"
+            },
+            "author": "From CNN's Allison Morrow",
+            "title": "Sam Bankman-Fried testifies he called 'some of the' shots at FTX - CNN",
+            "description": "Former crypto billionaire Sam Bankman-Fried, 31, took the witness stand again Monday as his criminal fraud trial continues in Manhattan. He faces life in prison if found guilty of all seven counts of federal fraud and conspiracy.",
+            "url": "https://www.cnn.com/business/live-news/sbf-crypto-fraud-trial-10-30/index.html",
+            "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/230120095706-05-sam-bankman-fried-010323-super-tease.jpg",
+            "publishedAt": "2023-10-30T20:24:49Z",
+            "content": "Assistant US Attorney Danielle Sassoon's pointed cross-examination continued after a break for lunch, in the form of short rapid-fire questions about what Bankman-Fried knew as the head of FTX versus… [+1147 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "CNBC"
+            },
+            "author": "Jonathan Vanian",
+            "title": "Pinterest jumps 11% on better-than-expected third-quarter results - CNBC",
+            "description": "Pinterest topped analysts' estimates for earnings and revenue in the third quarter",
+            "url": "https://www.cnbc.com/2023/10/30/pinterest-pins-q3-earnings-report-2023.html",
+            "urlToImage": "https://image.cnbcfm.com/api/v1/image/105918215-1558041844751gettyimages-1143514672.jpeg?v=1698690732&w=1920&h=1080",
+            "publishedAt": "2023-10-30T20:08:45Z",
+            "content": "Pinterest reported third-quarter earnings on Monday that beat on the top and bottom lines. The stock jumped more than 11% in extended trading. \r\nHere's how the company did:\r\n<ul><li>Revenue: $763.2 m… [+2478 chars]"
+        },
+        {
+            "source": {
+                "id": "the-wall-street-journal",
+                "name": "The Wall Street Journal"
+            },
+            "author": "Miles Kruppa, Jan Wolfe",
+            "title": "Google's Sundar Pichai Tells Court Search Dominance Is Result of 'Fierce Competition' - WSJ - The Wall Street Journal",
+            "description": "Sundar Pichai says search giant realized early on that browsers were critical to how people use the web",
+            "url": "https://www.wsj.com/tech/google-ceo-sundar-pichai-testimony-antitrust-c490c696",
+            "urlToImage": "https://images.wsj.net/im-877868/social",
+            "publishedAt": "2023-10-30T20:07:00Z",
+            "content": null
+        }
+    ]
+}
