@@ -16,12 +16,14 @@ const IndividualArticle = ({ articles }) => {
       <p>
         {formatPublishedDate(selectedArticle.publishedAt)}
       </p>
+      <img src={selectedArticle.urlToImage} alt={selectedArticle.title} className="article-img" />
+      <p className='selected-article-description'>
+        {selectedArticle.content}
+      </p>
       <p>
         Source: {selectedArticle.source.name}
       </p>
       Author: {selectedArticle.author}
-      <img src={selectedArticle.urlToImage} alt={selectedArticle.title} className="article-img"></img>
-      <p className='selected-article-description'>{selectedArticle.content}</p>
     </div>
   );
 

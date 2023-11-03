@@ -10,17 +10,17 @@ const AllArticles = ({ articles, handleSearch }) => {
     return (
       <Link to={`/article/${article.title}`} key={article.title}>
         <div className="article-container" >
-          <div className="title-author">
-            <h2>
-              {article.title}
-            </h2>
-            {reformattedDate}
-            <p>
-              Source: {article.source.name}
-            </p>
-            Author: {article.author}
-          </div>
-          <img src={article.urlToImage} alt={article.title} className="article-img"></img>
+            <div className="title-author">
+              <h2>
+                {article.title}
+              </h2>
+              {reformattedDate}
+              <p>
+                Source: {article.source.name}
+              </p>
+              Author: {article.author}
+            </div>
+            <img src={article.urlToImage} alt={article.title} className="article-img" />
         </div>
       </Link>
     );
@@ -28,13 +28,16 @@ const AllArticles = ({ articles, handleSearch }) => {
 
   return (
     <div className="all-articles">
-      <input
-        type="text"
-        placeholder="Search by title..."
-        value={searchValue}
-        onChange={e => setSearchValue(e.target.value)}
-      />
-      <button onClick={() => handleSearch(searchValue, articles)}>Search</button>
+      <form>
+        <input
+          type="text"
+          placeholder="Search by title..."
+          value={searchValue}
+          onChange={e => setSearchValue(e.target.value)}
+          className='searchbar'
+          />
+        <button onClick={() => handleSearch(searchValue, articles)}>Search</button>
+      </form>
       {allArticles}
     </div>
   );
