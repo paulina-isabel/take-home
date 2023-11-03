@@ -1,4 +1,5 @@
-const dummyArticles = [
+{
+    "articles": [
   {
       "source": {
           "id": "cnn",
@@ -260,5 +261,4 @@ const dummyArticles = [
       "content": "“Five Nights at Freddy’s” scared up $80 million at the domestic box office in its first weekend of release, above Sunday’s already-huge estimate of $78 million.\r\nUniversal and Blumhouse released the … [+2836 chars]"
   }
 ]
-
-export default dummyArticles;
+}
