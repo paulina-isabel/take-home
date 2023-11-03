@@ -9,19 +9,27 @@ describe('landing page', () => {
 
   it('should show all movies when on the homepage', () => {
     cy.location('pathname').should('eq', '/');
-    // cy.get('.header').should('exist');
-    // cy.get('.card').first().within(() => {
-    //   cy.get('img[name=movie-poster]').should('exist')
-    //   cy.contains('h2', 'Wifelike (2022');
-    //   cy.contains('h3', '6/10');
-    //   cy.get('.star').should('exist');
-    // })
-    // cy.get('.card').last().within(() => {
-    //   cy.get('img[name=movie-poster]').should('exist');
-    //   cy.contains('h2', 'X (2022');
-    //   cy.contains('h3', '1/10');
-    //   cy.get('.star').should('exist');
-    // })
+    cy.get('.navbar').should('exist');
+    cy.get('form').should('exist');
+    cy.get('.article-container').first().within(() => {
+      cy.get('.title-author')
+      cy.get('.article-img')
+    })
+    cy.get('.title-author').first().within(() => {
+      cy.contains('h2', 'Sam Bankman');
+      cy.contains('October 30, 2023 at 04:24:49 PM')
+    })
+    cy.location('pathname').should('eq', '/');
+    cy.get('.navbar').should('exist');
+    cy.get('form').should('exist');
+    cy.get('.article-container').last().within(() => {
+      cy.get('.title-author')
+      cy.get('.article-img')
+    })
+    cy.get('.title-author').last().within(() => {
+      cy.contains('h2', 'Sundar Pichai');
+      cy.contains('October 30, 2023 at 04:07:00 PM')
+    })
   })
 
   // it('should display a helpful message to the user when an error occurs', () => {
