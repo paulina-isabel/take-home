@@ -36,6 +36,7 @@ const App = () => {
     const filteredArticles = existingArticles.filter((article) => {
       return article.title.includes(searchWord)
     });
+    console.log('filtered articles inside handleSearch', filteredArticles)
     setArticles(filteredArticles)
   };
 

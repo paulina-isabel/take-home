@@ -36,7 +36,12 @@ const AllArticles = ({ articles, handleSearch }) => {
           onChange={e => setSearchValue(e.target.value)}
           className='searchbar'
           />
-        <button onClick={() => handleSearch(searchValue, articles)}>Search</button>
+        <button onClick={
+            (event) => { 
+              event.preventDefault()
+              handleSearch(searchValue, articles)
+            }
+          }>Search</button>
       </form>
       <div className='articles-style'>
         {allArticles}
